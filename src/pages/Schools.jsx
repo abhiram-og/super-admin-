@@ -396,7 +396,8 @@ export default function Schools() {
                           </TableCell>
                           <TableCell>
                             <span className="text-sm text-slate-600">
-                              {format(new Date(school.created_date), 'MMM d, yyyy')}
+                              {school.created_at ? format(new Date(school.created_at), 'MMM d, yyyy') : 
+                               school.created_date ? format(new Date(school.created_date), 'MMM d, yyyy') : 'N/A'}
                             </span>
                           </TableCell>
                           <TableCell>
