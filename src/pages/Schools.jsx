@@ -355,8 +355,12 @@ export default function Schools() {
                                 <Building2 className="w-5 h-5 text-blue-600" />
                               </div>
                               <div>
-                                <p className="font-medium text-slate-900 group-hover:text-blue-600">{school.display_name}</p>
-                                <p className="text-xs text-slate-500">{school.slug}</p>
+                                <p className="font-medium text-slate-900 group-hover:text-blue-600">
+                                  {school.name || school.display_name}
+                                </p>
+                                <p className="text-xs text-slate-500">
+                                  {school.code || school.slug}
+                                </p>
                               </div>
                             </div>
                           </TableCell>
