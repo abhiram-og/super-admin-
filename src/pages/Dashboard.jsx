@@ -26,7 +26,9 @@ import RevenueChart from "../components/dashboard/RevenueChart";
 import UserEngagementMap from "../components/dashboard/UserEngagementMap";
 import TenantHealthChart from "../components/dashboard/TenantHealthChart";
 
-import { Tenant, AuditLog } from "@/api/entities";
+// Import Django API client
+import api, { mockApi } from "@/api/djangoClient";
+import { mockData } from "@/api/mockData";
 
 export default function Dashboard() {
   const [tenants, setTenants] = useState([]);
