@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Tenant } from "@/api/entities";
+import api, { mockApi } from "@/api/djangoClient";
+import { mockData } from "@/api/mockData";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
