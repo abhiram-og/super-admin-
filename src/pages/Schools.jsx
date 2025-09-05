@@ -370,8 +370,8 @@ export default function Schools() {
                             </Badge>
                           </TableCell>
                           <TableCell>
-                            <Badge variant="outline" className={getStatusColor(school.license_state) + " capitalize"}>
-                              {school.license_state}
+                            <Badge variant="outline" className={getStatusColor(school.status || school.license_state) + " capitalize"}>
+                              {school.status || school.license_state}
                             </Badge>
                           </TableCell>
                           <TableCell>
