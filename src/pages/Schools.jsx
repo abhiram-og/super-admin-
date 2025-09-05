@@ -70,10 +70,19 @@ export default function Schools() {
   const loadSchools = async () => {
     setIsLoading(true);
     try {
-      const data = await withRetry(() => Tenant.list('-created_date'));
-      setSchools(data);
+      // Try to load from Django API first
+      const data = await withRetry(() => api.schools.list());
+      setSchools(data.results || data || []);
     } catch (error) {
-      console.error('Error loading schools:', error);
+      console.error('Error loading schools from API:', error);
+      // Fallback to mock data
+      try {
+        const mockResponse = await mockApi.schools.list();
+        setSchools(mockResponse.results || mockData.schools);
+      } catch (mockError) {
+        console.error('Error loading mock schools:', mockError);
+        setSchools([]);
+      }
     }
     setIsLoading(false);
   };
