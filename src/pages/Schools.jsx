@@ -423,7 +423,7 @@ export default function Schools() {
                                 </DropdownMenuItem>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>
-                                  {school.license_state === 'suspended' ? (
+                                  {school.status === 'suspended' || school.license_state === 'suspended' ? (
                                     <>
                                       <Play className="w-4 h-4 mr-2" />
                                       Activate
