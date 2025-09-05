@@ -32,7 +32,13 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework_simplejwt',
     
-    # Local apps will be added after creation
+    # Local apps
+    'schools',
+    'dashboard',
+    'integrations',
+    'compliance',
+    'users',
+    'analytics',
 ]
 
 MIDDLEWARE = [
