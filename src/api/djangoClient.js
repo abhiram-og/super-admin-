@@ -217,4 +217,5 @@ export const api = {
   },
 };
 
+export { mockApi } from './mockData';
 export default api;
