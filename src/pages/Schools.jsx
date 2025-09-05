@@ -94,19 +94,27 @@ export default function Schools() {
     // Search filter
     if (searchTerm) {
       filtered = filtered.filter(school =>
-        school.display_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        school.slug.toLowerCase().includes(searchTerm.toLowerCase())
+        school.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        school.code?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        school.display_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        school.slug?.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
     // Tier filter
     if (filters.tier !== "all") {
-      filtered = filtered.filter(school => school.tier === filters.tier);
+      filtered = filtered.filter(school => 
+        school.tier === filters.tier || 
+        school.tier_name === filters.tier
+      );
     }
 
     // Status filter
     if (filters.status !== "all") {
-      filtered = filtered.filter(school => school.license_state === filters.status);
+      filtered = filtered.filter(school => 
+        school.status === filters.status || 
+        school.license_state === filters.status
+      );
     }
 
     // Health filter
