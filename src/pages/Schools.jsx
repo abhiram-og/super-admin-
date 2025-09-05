@@ -383,7 +383,9 @@ export default function Schools() {
                           <TableCell>
                             <div className="flex items-center gap-1">
                               <Users className="w-4 h-4 text-slate-400" />
-                              <span className="text-sm font-medium">{school.usage_stats?.active_users || 0}</span>
+                              <span className="text-sm font-medium">
+                                {school.total_students || school.usage_stats?.active_users || 0}
+                              </span>
                             </div>
                           </TableCell>
                           <TableCell>
