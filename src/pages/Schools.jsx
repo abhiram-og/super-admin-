@@ -365,8 +365,8 @@ export default function Schools() {
                             </div>
                           </TableCell>
                           <TableCell>
-                            <Badge variant="outline" className={getTierColor(school.tier) + " capitalize"}>
-                              {school.tier}
+                            <Badge variant="outline" className={getTierColor(school.tier || school.tier_name) + " capitalize"}>
+                              {school.tier || school.tier_name}
                             </Badge>
                           </TableCell>
                           <TableCell>
