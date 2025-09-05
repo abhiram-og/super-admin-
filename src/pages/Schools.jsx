@@ -221,7 +221,7 @@ export default function Schools() {
               <div>
                 <p className="text-sm text-slate-600">Active Schools</p>
                 <p className="text-2xl font-bold text-green-700">
-                  {schools.filter(s => s.license_state === 'active').length}
+                  {schools.filter(s => s.status === 'active' || s.license_state === 'active').length}
                 </p>
               </div>
               <div className="p-2 bg-green-100 rounded-lg">
